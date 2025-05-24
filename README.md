@@ -21,8 +21,8 @@ I am not `responsible` for the possibility of an account being `banned`!
 - Clone Repository
 
 ```bash
-git clone https://github.com/Hunga9k50doker/kite.git
-cd kite
+git clone https://github.com/Hunga9k50doker/kite-ai.git
+cd kite-ai
 ```
 
 - Install Dependency

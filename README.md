@@ -1,47 +1,58 @@
-# Automation Scripts
+# ᝰ.ᐟ kite
+
+Link: [https://testnet.gokite.ai](https://testnet.gokite.ai?referralCode=IDN4R9TA)
 
 Tool được phát triển bởi nhóm tele Airdrop Hunter Siêu Tốc (https://t.me/airdrophuntersieutoc)
 
-### General Features
+## 🚨 Attention Before Running kite Cli Version
 
-✔️ Auto Chat
+I am not `responsible` for the possibility of an account being `banned`!
 
-✔️ Auto reff
+## 📎 kite Node cli version Script features
 
-## Installation
+- Auto dailyquiz
+- Auto chat
+- Auto reff
+- Support proxy or not
+- Mutiple threads, multiple accounts
 
-1. **Clone this repository:**
+## ✎ᝰ. RUNNING
 
-- Open cmd or Shell, then run the command:
+- Clone Repository
 
-```sh
-git clone https://github.com/Hunga9k50doker/kite-ai.git
+```bash
+git clone https://github.com/Hunga9k50doker/kite.git
+cd kite
 ```
 
-```sh
-cd kite-ai
-```
+- Install Dependency
 
-2. **Install Dependencies:**
-
-- Open cmd or Shell, then run the command:
-
-```sh
+```bash
 npm install
 ```
 
-3. **Prepare Input Files:**
+- Setup config in .env
 
-- Open the `wallets.txt`: Add your wallets (one per line) in the root directory.
-
-```sh
-nano wallets.txt
+```bash
+nano .env
 ```
 
-4. **Run:**
+- Setup input value
 
-- Open cmd or Shell, then run command:
+* proxy: http://user:pass@ip:port
 
-```sh
-node main or node main-thread
+```bash
+nano proxy.txt
+```
+
+- privateKeys: how to get privateKeys => join my channel: https://t.me/airdrophuntersieutoc
+
+```bash
+nano privateKeys.txt
+```
+
+- Run the script
+
+```bash
+node main.js
 ```

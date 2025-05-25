@@ -6,7 +6,7 @@ const { HttpsProxyAgent } = require("https-proxy-agent");
 const readline = require("readline");
 const user_agents = require("./config/userAgents");
 const settings = require("./config/config.js");
-const { sleep, loadData, getRandomNumber, saveToken, isTokenExpired, saveJson, getRandomElement } = require("./utils/utils.js");
+const { sleep, loadData, getRandomNumber, saveToken, isTokenExpired, saveJson, getRandomElement, generateId } = require("./utils/utils.js");
 const { Worker, isMainThread, parentPort, workerData } = require("worker_threads");
 const { checkBaseUrl } = require("./utils/checkAPI.js");
 const { headers } = require("./core/header.js");
@@ -535,11 +535,11 @@ class ClientAPI {
       case "Professor":
         break;
       case "Crypto Buddy":
-        mess = getRandomElement(Crypto_BuddyQuestions);
+        mess = getRandomElement(ProfessorQuestions);
         service_id = settings.CRYPTO_BUDDY_ID;
         break;
       case "Sherlock":
-        mess = getRandomElement(SherlockQuestions);
+        mess = getRandomElement(ProfessorQuestions);
         service_id = settings.SELOCK_ID;
         break;
       default:
@@ -637,8 +637,11 @@ class ClientAPI {
     } while (retries < 1 && userData.status !== 400);
     const blance = await this.getBalance();
     if (userData?.success) {
+      let balances = { kite: 0, usdt: 0 };
       const { profile, onboarding_quiz_completed, faucet_claimable, daily_quiz_completed } = userData.data;
-      const { balances } = blance.data;
+      if (blance.data?.balances?.kite) {
+        balances = blance.data?.balances;
+      }
       userData.data["balances"] = balances;
       this.log(`Kite: ${balances["kite"]} | USDT: ${Number(balances["usdt"]).toFixed(4)} | Total points: ${profile?.total_xp_points || 0}`, "custom");
     } else {
@@ -701,7 +704,7 @@ class ClientAPI {
         await this.handleFaucet();
         await sleep(1);
       }
-      if (onboarding_quiz_completed === false) {
+      if (daily_quiz_completed === false) {
         this.log(`Starting daily quiz...`);
         await this.handleDailyQuiz();
         await sleep(1);

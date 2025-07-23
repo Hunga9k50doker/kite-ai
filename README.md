@@ -10,9 +10,11 @@ I am not `responsible` for the possibility of an account being `banned`!
 
 ## 📎 kite Node cli version Script features
 
+- Auto quiz onboard
 - Auto dailyquiz
 - Auto chat
 - Auto reff
+- Auto bridge
 - Support proxy or not
 - Mutiple threads, multiple accounts
 

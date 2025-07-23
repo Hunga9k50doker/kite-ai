@@ -1,3 +1,5 @@
+# This version not avaliable, find final version here: https://amautomarket.com/products/kite-full-chuc-nang
+
 # ᝰ.ᐟ kite
 
 Link: [https://testnet.gokite.ai](https://testnet.gokite.ai?referralCode=IDN4R9TA)
